@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "esbuild index.tsx --bundle --outfile=public/index.js --minify",
     "preview": "vite preview"
   },
   "dependencies": {
