@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASDA & Tesco Product Comparator</title>
+    <link rel="stylesheet" href="index.css">
+    <script type="importmap">
+      {
+        "imports": {
+          "@google/genai": "https://esm.sh/@google/genai@^0.7.0"
+        }
+      }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>ASDA & Tesco Product Comparator</h1>
+        <form id="search-form" aria-labelledby="search-heading">
+            <h2 id="search-heading" class="sr-only">Product Search</h2>
+            <label for="product-name" class="sr-only">Product Name</label>
+            <input type="text" id="product-name" placeholder="Enter product name..." aria-required="true">
+            <button type="submit" id="search-button">Search</button>
+        </form>
+        <div id="message-area" aria-live="polite"></div>
+        <div id="results-container">
+            <h2>Results</h2>
+            <ul id="results-list" aria-label="Search results"></ul>
+        </div>
+        <div id="selection-area" aria-live="polite"></div>
+
+        <div id="selected-items-container">
+            <h2>Your Selected Items</h2>
+            <ul id="selected-items-list" aria-label="List of your selected items"></ul>
+            <p id="no-selected-items-message" class="empty-list-message">No items selected yet.</p>
+        </div>
+
+        <div class="finished-button-container">
+            <button type="button" id="finished-button">Finished</button>
+       </div>
+    </div>
+    <script type="module" src="index.tsx"></script>
+</body>
+</html><link rel="stylesheet" href="index.css">
+<script src="index.tsx" type="module"></script>

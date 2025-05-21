@@ -1,0 +1,221 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 700px; /* Increased width for more data */
+}
+
+h1 {
+    color: #007a33; /* ASDA green-ish */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h2 {
+    margin-top: 25px;
+    margin-bottom: 10px;
+    font-size: 1.3em;
+    color: #333;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+#search-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#product-name {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+#product-name:focus {
+    outline: none;
+    border-color: #007a33;
+    box-shadow: 0 0 0 2px rgba(0, 122, 51, 0.2);
+}
+
+#search-button {
+    padding: 10px 20px;
+    background-color: #007a33; /* ASDA green */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+#search-button:hover, #search-button:focus {
+    background-color: #005c29;
+    outline: 2px solid #004d1a;
+    outline-offset: 1px;
+}
+
+#search-button:disabled {
+    background-color: #aaa;
+    cursor: not-allowed;
+}
+
+#message-area {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: #e6f3e6; /* Light green */
+    color: #004d1a; /* Dark green text */
+    border: 1px solid #cce0cc;
+    min-height: 20px; /* Ensure space even when empty */
+}
+
+#message-area:empty {
+    display: none;
+}
+
+#results-container h2, #selected-items-container h2 {
+    margin-top: 0; /* Adjusted for containers */
+}
+
+
+#results-list, #selected-items-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    max-height: 280px; /* Adjusted max-height */
+    overflow-y: auto;
+    border: 1px solid #eee;
+    border-radius: 4px;
+}
+
+#results-list li, #selected-items-list li {
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.2s ease;
+}
+
+#results-list li {
+    cursor: pointer;
+}
+
+#results-list li:last-child, #selected-items-list li:last-child {
+    border-bottom: none;
+}
+
+#results-list li:hover {
+    background-color: #f0f0f0; /* Neutral hover for results */
+}
+
+#results-list li.selected {
+    background-color: #e0e0e0; /* Slightly darker grey for selected in results */
+    font-weight: bold;
+}
+
+#results-list li:focus {
+    outline: 2px solid #007a33; /* ASDA green focus */
+    outline-offset: -2px;
+}
+
+
+#selection-area {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    color: #333;
+    min-height: 20px;
+    font-style: italic;
+}
+
+#selection-area:empty {
+    display: none;
+}
+
+#selected-items-container {
+    margin-top: 25px;
+}
+
+/* Price comparison styling */
+.asda-cheaper {
+    background-color: #e6f3e6; /* Light ASDA green background */
+    color: #004d1a; /* Darker green text for contrast */
+    border-left: 4px solid #007a33; /* ASDA green accent border */
+}
+
+.tesco-cheaper {
+    background-color: #e0eafc; /* Light Tesco blue background */
+    color: #002f87; /* Darker blue text for contrast */
+    border-left: 4px solid #00539f; /* Tesco blue accent border */
+}
+
+.price-neutral {
+    background-color: #f9f9f9; /* Default background for selected items */
+    border-left: 4px solid #ccc; /* Neutral grey accent border */
+}
+
+
+.empty-list-message {
+    color: #777;
+    font-style: italic;
+    padding: 10px 0;
+}
+
+.finished-button-container {
+    margin-top: 25px;
+    text-align: right; /* Aligns the button to the right */
+}
+
+#finished-button {
+    padding: 12px 25px;
+    background-color: #28a745; /* Success green */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+#finished-button:hover, #finished-button:focus {
+    background-color: #218838; /* Darker success green */
+    outline: 2px solid #1e7e34; /* Focus outline for accessibility */
+    outline-offset: 1px;
+}
+
+#finished-button:disabled {
+    background-color: #aaa;
+    color: #666;
+    cursor: not-allowed;
+}
+
+
+/* Accessibility: Visually hide elements but keep them accessible to screen readers */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}

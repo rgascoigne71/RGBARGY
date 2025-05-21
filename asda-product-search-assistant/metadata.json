@@ -1,0 +1,5 @@
+{
+  "name": "Copy of ASDA Product Search Assistant",
+  "description": "Search for products on ASDA.com (simulated) and select items from the results using Gemini.",
+  "requestFramePermissions": []
+}
