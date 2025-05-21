@@ -1,0 +1,19 @@
+# netlify.toml
+[build]
+  command = "npm run build"        # Your build script from package.json
+  publish = "public"               # The directory with your deploy-ready assets
+  functions = "netlify/functions"  # The directory for your serverless functions
+
+# Optional: If you want to use Node.js version 20 for functions
+[functions]
+  node_bundler = "esbuild" # Use esbuild for bundling functions
+  [functions.environment]
+    # You can set non-secret env vars here if needed
+  [functions."*"] # Applies to all functions
+    included_files = ["node_modules/@google/genai/**"] # Example if you need to include specific node_modules
+
+# Optional: Redirect rule for cleaner function URLs (not strictly needed for your current fetch path)
+# [[redirects]]
+#   from = "/api/*"
+#   to = "/.netlify/functions/:splat"
+#   status = 200
